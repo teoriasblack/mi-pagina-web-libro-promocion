@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crianza Montessori para Padres Primerizos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Crianza Montessori - Guía Completa para Padres | Descárgala Ahora</title>
+    <meta name="description" content="La guía más completa de Crianza Montessori para padres primerizos. Aprende a criar con autonomía, respeto y amor. Disponible en PDF.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #2D5A4A;
-            --secondary: #8B9D83;
-            --accent: #D4A574;
-            --accent-light: #F5E6D3;
-            --text: #333333;
-            --text-light: #666666;
-            --bg: #FDFBF7;
-            --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --primary: #1a5f4a;
+            --primary-dark: #134436;
+            --secondary: #f5e6d3;
+            --accent: #d4a574;
+            --accent-hover: #c49464;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --white: #ffffff;
+            --success: #2e7d32;
+            --shadow: 0 4px 30px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         * {
@@ -25,875 +33,726 @@
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            font-size: 16px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
         }
 
-        /* Cover Page */
-        .cover {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a5f4a 0%, #0d3d32 100%);
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--primary) 0%, #1a3d30 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 40px;
+            padding: 60px 20px;
             position: relative;
             overflow: hidden;
         }
 
-        .cover::before {
+        .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 80%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(-15deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
-        .cover-content {
+        .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 800px;
         }
 
-        .cover-icon {
-            font-size: 80px;
-            margin-bottom: 30px;
-            opacity: 0.9;
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .cover h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(36px, 6vw, 64px);
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.15;
+            margin-bottom: 25px;
             text-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
 
-        .cover-subtitle {
-            font-size: 24px;
-            color: var(--accent-light);
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: rgba(255,255,255,0.9);
             font-weight: 300;
             margin-bottom: 40px;
-            letter-spacing: 2px;
+            line-height: 1.6;
         }
 
-        .cover-author {
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 20px 50px;
             font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212,165,116,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212,165,116,0.5);
+        }
+
+        .price {
+            margin-top: 30px;
             color: rgba(255,255,255,0.8);
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 16px;
         }
 
-        .cover-author span {
-            display: block;
-            font-size: 14px;
-            margin-top: 8px;
+        .price .old-price {
+            text-decoration: line-through;
             opacity: 0.7;
+            margin-right: 15px;
         }
 
-        /* Interior Pages */
-        .page {
+        .price .new-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .guarantee svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            background: var(--secondary);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .social-proof p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .social-proof strong {
+            color: var(--primary);
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 20px;
             max-width: 800px;
             margin: 0 auto;
-            padding: 80px 60px;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            min-height: 100vh;
         }
 
-        /* Title Page */
-        .title-page {
+        .problem h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--text-dark);
             text-align: center;
-            padding: 100px 40px;
+            margin-bottom: 40px;
         }
 
-        .title-page h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: var(--primary);
-            margin-bottom: 30px;
-        }
-
-        .title-page .subtitle {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 50px;
-        }
-
-        .title-page .author {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Introduction */
-        .introduction {
-            padding: 40px 0;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            font-style: italic;
-            color: var(--text-light);
-            border-left: 4px solid var(--accent);
-            padding-left: 30px;
-            margin: 40px 0;
-        }
-
-        /* Chapters */
-        .chapter {
-            margin: 60px 0;
-            padding-top: 40px;
-        }
-
-        .chapter-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 14px;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .chapter h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .chapter h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-        }
-
-        .chapter h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--primary);
-            margin: 35px 0 20px;
-        }
-
-        .chapter h4 {
-            font-size: 18px;
-            color: var(--text);
-            margin: 25px 0 15px;
-            font-weight: 600;
-        }
-
-        .chapter p {
+        .problem-card {
+            background: #fff5f5;
+            border-left: 4px solid #e57373;
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
             margin-bottom: 20px;
-            text-align: justify;
         }
 
-        .chapter ul, .chapter ol {
-            margin: 20px 0 20px 30px;
+        .problem-card h3 {
+            color: #c62828;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .chapter li {
+        .problem-card p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--white) 100%);
+            padding: 80px 20px;
+        }
+
+        .solution h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .solution-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            color: var(--text-dark);
             margin-bottom: 12px;
         }
 
-        /* Highlights Box */
-        .highlight-box {
-            background: linear-gradient(135deg, var(--accent-light) 0%, #faf5eb 100%);
-            border-left: 5px solid var(--accent);
-            padding: 25px 30px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
         }
 
-        .highlight-box h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
+        /* What's Inside */
+        .inside {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .highlight-box p {
-            margin-bottom: 0;
+        .inside h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        /* Tip Box */
-        .tip-box {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-left: 5px solid #4caf50;
-            padding: 25px 30px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .tip-box h4 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-
-        /* Warning Box */
-        .warning-box {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            border-left: 5px solid #ff9800;
-            padding: 25px 30px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .warning-box h4 {
-            color: #e65100;
-            margin-bottom: 10px;
-        }
-
-        /* Lists */
-        .styled-list {
+        .chapters-list {
             list-style: none;
-            margin: 25px 0 !important;
-            padding: 0 !important;
+            counter-reset: chapter;
         }
 
-        .styled-list li {
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 18px;
+        .chapters-list li {
+            counter-increment: chapter;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
         }
 
-        .styled-list li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 14px;
+        .chapters-list li::before {
+            content: counter(chapter);
+            min-width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
         }
 
-        /* Divider */
-        .divider {
-            text-align: center;
-            margin: 60px 0;
-            position: relative;
+        .chapters-list li h4 {
+            font-size: 17px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
         }
 
-        .divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .divider-icon {
-            font-size: 24px;
-            color: var(--accent);
-            background: var(--white);
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Final Page */
-        .final-message {
-            text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, var(--accent-light) 0%, #faf5eb 100%);
-            border-radius: 15px;
-            margin: 40px 0;
-        }
-
-        .final-message h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px;
-            margin-top: 60px;
-            border-top: 1px solid #eee;
+        .chapters-list li p {
             color: var(--text-light);
             font-size: 14px;
         }
 
-        /* Page Break */
-        .page-break {
-            page-break-after: always;
-            height: 0;
+        /* Author Section */
+        .author {
+            background: var(--primary);
+            padding: 80px 20px;
+            text-align: center;
         }
 
-        /* Print Styles */
-        @media print {
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin: 0 auto 25px;
+            border: 3px solid var(--accent);
+        }
+
+        .author h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .author p {
+            color: rgba(255,255,255,0.85);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--secondary) 100%);
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-light);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .price-card {
+            background: var(--white);
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: 'OFERTA LIMITADA';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #e53935;
+            color: var(--white);
+            padding: 5px 40px;
+            font-size: 11px;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .price-amount {
+            margin-bottom: 10px;
+        }
+
+        .price-amount .old {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .price-amount .new {
+            color: var(--primary);
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .price-amount .currency {
+            font-size: 24px;
+            vertical-align: super;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .price-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-dark);
+        }
+
+        .price-card li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .price-card .cta-final {
+            display: block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: var(--text-dark);
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-card .cta-final:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(212,165,116,0.4);
+        }
+
+        .price-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .cta-button {
+                padding: 18px 35px;
+                font-size: 16px;
+            }
+            
+            .price .new-price {
+                font-size: 28px;
+            }
+            
+            .price-card {
+                padding: 40px 25px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky CTA for mobile */
+        @media (max-width: 600px) {
+            .sticky-cta {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 15px 20px;
+                box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+                z-index: 100;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .sticky-cta .cta-button {
+                padding: 15px 30px;
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            
             body {
-                background: white;
-            }
-            .page {
-                box-shadow: none;
-                padding: 40px;
-            }
-            .cover {
-                min-height: auto;
-                padding: 60px 40px;
+                padding-bottom: 80px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cover Page -->
-    <div class="cover">
-        <div class="cover-content">
-            <div class="cover-icon">🌱</div>
-            <h1>Crianza Montessori<br>para Padres Primerizos</h1>
-            <p class="cover-subtitle">La guía completa para criar con autonomía, respeto y amor</p>
-            <div class="cover-author">
-                Ivo Nahuel Jasinskas
-                <span>© 2026 - Todos los derechos reservados</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Title Page -->
-    <div class="page">
-        <div class="title-page">
-            <h1>Crianza Montessori</h1>
-            <p class="subtitle">La guía completa para padres primerizos</p>
-            <p class="author">Ivo Nahuel Jasinskas</p>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Introduction -->
-    <div class="page">
-        <div class="introduction">
-            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 30px; font-size: 32px;">Introducción</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🥷 Nueva Guía 2026</div>
             
-            <p>Enhorabuena. Has tomado en tus manos una guía que puede transformar tu manera de criar a tu hijo. Si eres padre o madre primeriza, probablemente estés experimentando un cóctel de emociones: amor infinito, miedo a equivocarte, muchas preguntas y, sobre todo, el deseo profundo de hacer lo mejor para tu bebé.</p>
-
-            <p>El método Montessori no es una fórmula mágica ni un conjunto de reglas rígidas. Es una filosofía de vida que respeta profundamente al niño como ser humano completo, con capacidades innatas de aprendizaje y autonomía. Maria Montessori, la pedagoga italiana que desarrolló este método a principios del siglo XX, descubrió algo revolucionario: los niños no necesitan que les enseñemos todo; necesitan que les dejemos espacio para descubrir, experimentar y crecer a su propio ritmo.</p>
-
-            <p>Este ebook está diseñado específicamente para ti, que eres padre o madre primerizo y quieres implementar el método Montessori en tu hogar, pero no sabes por dónde empezar. Aquí encontrarás explicaciones claras, actividades prácticas y consejos aplicados que podrás usar desde el primer día con tu bebé.</p>
-
-            <p>No necesitas ser maestro, tener una formación especial ni convertir tu casa en un aula. Solo necesitas disposición para observar, paciencia para permitir y amor para acompañar.</p>
-
-            <div class="highlight-box">
-                <h4>¿Qué vas a aprender en este ebook?</h4>
-                <ul class="styled-list">
-                    <li>Los fundamentos del método Montessori y por qué funciona</li>
-                    <li>Cómo preparar tu hogar para fomentar la autonomía de tu hijo</li>
-                    <li>Adaptaciones suited a cada etapa del desarrollo (0-3 años)</li>
-                    <li>Cómo manejar los desafíos cotidianos con un enfoque Montessori</li>
-                    <li>Errores comunes que debes evitar</li>
-                    <li>Recursos prácticos para profundizar</li>
-                </ul>
+            <h1>¿Cansado de sentir que <span>no sabés</span> cómo criar a tu hijo?</h1>
+            
+            <p class="hero-subtitle">
+                Descubrí el método que usan millones de padres en el mundo para criar hijos autónomos, seguros y felices. <strong>Sin fórmulas complicadas</strong>, con pasos concretos que podés aplicar desde hoy.
+            </p>
+            
+            <a href="#precios" class="cta-button">¡Quiero la Guía Ahora!</a>
+            
+            <div class="price">
+                <span class="old-price">$18.000 ARS</span>
+                <span class="new-price">$7.990 ARS</span>
             </div>
-
-            <p style="text-align: center; margin-top: 40px; font-style: italic; color: var(--text-light);">Prepárate para un viaje hermoso y transformador. Criar con Montessori no es solo una técnica educativa; es una forma de relacionarte con tu hijo que os acompañará toda la vida.</p>
+            
+            <div class="guarantee">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>30 días de garantía - Si no te sirve, te devuelvo tu dinero</span>
+            </div>
         </div>
+    </section>
+
+    <!-- Social Proof -->
+    <div class="social-proof">
+        <p>📚 <strong>+500 padres</strong> ya descargaron esta guía y están aplicando Montessori en casa</p>
     </div>
 
-    <div class="page-break"></div>
+    <!-- Problem Section -->
+    <section class="problem">
+        <h2>¿Te suena familiar?</h2>
+        
+        <div class="problem-card">
+            <h3>😰 "¿Estoy haciendo todo mal?"</h3>
+            <p>Sentís que cada decisión que tomás puede afectar a tu hijo para siempre. Buscás información peroEncontrás consejos contradictorios que te confunden más.</p>
+        </div>
+        
+        <div class="problem-card">
+            <h3>😴 "Duermo peor que mi bebé"</h3>
+            <p>Las noches son un caos. No sabés cómo establecer rutinas que funcionen sin llorar, sin peleas y sin sentir que estás fallando como padre.</p>
+        </div>
+        
+        <div class="problem-card">
+            <h3>😤 "Mi hijo no me hace caso"</h3>
+            <p>Gritas, explicás, rogás... y nada. Sientes que tu hijo te desafía constantemente y no sabés cómo manejarlo sin castigos ni gritos.</p>
+        </div>
+        
+        <div class="problem-card">
+            <h3>💸 "Gasté fortunas en cursos que no sirvieron"</h3>
+            <p>Compraste libros, tomastee cursos online, viste videos... pero cuando llega el momento real, none sabés qué hacer.</p>
+        </div>
+    </section>
 
-    <!-- Chapter 1 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 1</div>
-            <h2>Fundamentos del Método Montessori</h2>
-
-            <h3>1.1 ¿Qué es el método Montessori?</h3>
-            <p>El método Montessori es un enfoque educativo desarrollado por Maria Montessori (1870-1952), la primera mujer italiana en licenciarse en medicina. Sus observaciones científicas sobre el comportamiento infantil la llevó a desarrollar una pedagogía revolucionaria que se basa en tres pilares fundamentales:</p>
-
-            <ul class="styled-list">
-                <li><strong>El niño como protagonista:</strong> En lugar de ver al niño como un adulto en miniatura que necesita ser moldeado, Montessori lo reconoció como un ser único con su propia lógica, capacidades y necesidades.</li>
-                <li><strong>El ambiente preparado:</strong> El entorno donde crece el niño debe estar diseñado para facilitar su desarrollo autónomo.</li>
-                <li><strong>El papel del adulto:</strong> El adulto no es un instructor que transmite conocimientos, sino un guía que observa, acompaña y facilita.</li>
-            </ul>
-
-            <h3>1.2 Los cuatro principios fundamentales</h3>
-
-            <h4>Principio 1: Seguir al niño</h4>
-            <p>Cada niño tiene su propio ritmo de desarrollo. Lo que funciona para uno puede no funcionar para otro. La observación es la herramienta más importante del método Montessori. Antes de intervenir, observa qué necesita tu hijo.</p>
-
-            <h4>Principio 2: El ambiente es el maestro</h4>
-            <p>El espacio físico comunica al niño qué se espera de él. Un ambiente preparado con materiales accesibles, organizados y adaptados a su tamaño le invita a explorar y aprender de forma natural.</p>
-
-            <h4>Principio 3: Libertad dentro de límites</h4>
-            <p>La libertad no significa permisividad. En Montessori, el niño tiene libertad para elegir sus actividades dentro de un marco estructurado. Puede explorar, pero siempre dentro de límites claros y seguros.</p>
-
-            <h4>Principio 4: Respeto por el niño</h4>
-            <p>Respetar al niño significa reconocer sus emociones, permitir que experimente las consecuencias de sus actos (de forma segura) y tratarlo como persona.</p>
-
-            <div class="tip-box">
-                <h4>💡 ¿Por qué funciona para padres primerizos?</h4>
-                <p>Como padre primerizo, es natural sentirse inseguro.Quieres hacer todo "bien" y temes cometer errores. El método Montessori te ofrece un marco claro que reduce la ansiedad. Los niños Montessori suelen ser más independientes, seguros y curiosos.</p>
+    <!-- Solution Section -->
+    <section class="solution">
+        <h2>Existe una mejor manera</h2>
+        <p class="solution-subtitle">El Método Montessori no es solo para escuelas. Es una filosofía de vida que transforma la relación con tu hijo.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Desarrollo Integral</h3>
+                <p>Tu hijo desarrolla autonomía, confianza y capacidades cognitivas superiores desde los primeros meses.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Vínculo Más Fuerte</h3>
+                <p>Dejás de ser un "polícia" y te convertís en el guía que tu hijo necesita. La conexión se profundiza.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">😴</div>
+                <h3>Rutinas que Funcionan</h3>
+                <p>Aprendé a crear hábitos de sueño, comida y juego que se mantienen en el tiempo. Sin peleas diarias.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Resultados Comprobados</h3>
+                <p>Método usado por décadas en las mejores escuelas del mundo. Ahora disponible para vos en casa.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Pasos Prácticos</h3>
+                <p>No teorías vagas. Actividades concretas, adaptadas a cada edad, que podés implementar inmediatamente.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👨‍👩‍👧</div>
+                <h3>Para Toda la Familia</h3>
+                <p>No solo para padres. Incluye guía para grandparents, cuidadores y hermanos. Todos en la misma página.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="page-break"></div>
+    <!-- What's Inside -->
+    <section class="inside">
+        <h2>¿Qué vas a encontrar dentro?</h2>
+        
+        <ul class="chapters-list">
+            <li>
+                <div>
+                    <h4>Capítulo 1: Fundamentos del Método Montessori</h4>
+                    <p>Los principios que cambian cómo ves a tu hijo y a la paternidad.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 2: El Ambiente Preparado</h4>
+                    <p>Cómo transformar tu hogar para fomentar la autonomía de tu hijo.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 3-6: Actividades por Edades</h4>
+                    <p> +50 actividades prácticas divididas por etapas: 0-6 meses, 6-12 meses, 1-2 años, 2-3 años.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 7: El Rol de los Padres</h4>
+                    <p>Cómo ser un guía sin ser un jefe. Comunicación efectiva y límites con amor.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 8: Errores Comunes</h4>
+                    <p>Los 5 errores que sabotjean tu esfuerzo y cómo evitarlos.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 9-10: Situaciones Cotidianas</h4>
+                    <p>Comida, sueño, salidas, compras... cómo manejar cada momento con Montessori.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>Capítulo 11-12: Recursos y Siguientes Pasos</h4>
+                    <p>Libros, materiales, comunidades y un plan de acción para empezar hoy.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
 
-    <!-- Chapter 2 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 2</div>
-            <h2>El Ambiente Preparado</h2>
+    <!-- Author Section -->
+    <section class="author">
+        <div class="author-avatar">📖</div>
+        <h2>Sobre el Autor</h2>
+        <p>
+            <strong>Ivo Nahuel Jasinskas</strong> es padre, investigador y apasionado del desarrollo infantil. 
+            Después de años de estudio y práctica, creó esta guía para ayudar a padres argentinos a implementar 
+            el método Montessori sin complicaciones, adaptado a nuestra realidad y cultura.
+        </p>
+    </section>
 
-            <h3>2.1 Qué es un ambiente preparado</h3>
-            <p>Un ambiente preparado es un espacio diseñado específicamente para el niño, donde cada elemento tiene un propósito y está a su alcance. En un ambiente Montessori, el niño puede moverse libremente, elegir sus actividades y hacerlas sin ayuda constante del adulto.</p>
-
-            <p>Imagina esto: tu hijo se despierta y puede levantarse de su cama low (al suelo), ir al baño solo, lavarse las manos, prepararse un vaso de agua y elegir un juguete, todo sin necesitarte para cada paso. Eso es un ambiente preparado.</p>
-
-            <h3>2.2 Elementos esenciales del hogar Montessori</h3>
-
-            <h4>Muebles a la medida del niño</h4>
-            <ul class="styled-list">
-                <li><strong>Camas en el suelo (floor bed):</strong> Permiten que el niño se levante y se acueste solo.</li>
-                <li><strong>Mesas y sillas bajas:</strong> Para que pueda sentarse y levantarse independientemente.</li>
-                <li><strong>Percheros a su altura:</strong> Para que elija su ropa y se vista solo.</li>
-                <li><strong>Estanterías abiertas:</strong> Los materiales siempre visibles y accesibles.</li>
-            </ul>
-
-            <h4>Organización visual</h4>
-            <ul class="styled-list">
-                <li>Cajas, canastas y bandejas: Cada material tiene su lugar.</li>
-                <li>Etiquetas con fotos: Ayudan al niño a identificar dónde va cada cosa.</li>
-                <li>Orden interno: Menos es más. Evita el exceso de estímulos.</li>
-            </ul>
-
-            <h3>2.3 La habitación del bebé</h3>
-            <p><strong>La cuna:</strong> Tradicionalmente, las familias Montessori usan floor beds (camas en el suelo) desde los primeros meses. Esto permite que el bebé se mueva libremente.</p>
-
-            <p><strong>El móvil de Munari:</strong> Durante los primeros meses, el móvil de Munari es uno de los primeros estímulos visuales. Consiste en figuras geométricas en blanco y negro que cuelgan a 20-30 cm del rostro del bebé.</p>
-
-            <div class="highlight-box">
-                <h4>La cocina infantil</h4>
-                <p>Si tienes espacio, una cocina Montessori es un regalo infinito. Incluye: estante bajo con snacks saludables, agua en una jarra pequeña que pueda servir solo, taza y cubiertos de su tamaño, tabla de cortar y cuchillo de plástico.</p>
+    <!-- Pricing Section -->
+    <section class="pricing" id="precios">
+        <h2>Invertí en tu hijo hoy</h2>
+        <p class="pricing-subtitle">El precio de un libro en una librería. El valor de una vida transformada.</p>
+        
+        <div class="price-card">
+            <div class="price-amount">
+                <span class="old">$18.000</span>
+                <span class="new"><span class="currency">$</span>7.990</span>
             </div>
+            
+            <ul>
+                <li>Guía completa en PDF (50+ páginas)</li>
+                <li>12 capítulos con contenido de calidad</li>
+                <li>+50 actividades prácticas por edad</li>
+                <li>Diseño profesional para leer en cualquier dispositivo</li>
+                <li>Acceso inmediato tras la compra</li>
+                <li>Garantía de 30 días</li>
+            </ul>
+            
+            <!-- Botón de compra que redirige a la página de descarga -->
+            <a href="https://teoriasblack.github.io/ebook-montessori-descarga/" class="cta-final" onclick="alert('¡Gracias por tu compra! Serás redirigido a la página de descarga...')">
+                ¡Descargar Ahora!
+            </a>
+            
+            <p class="price-note">💳 Aceptamos MercadoPago, tarjetas de crédito y débito</p>
         </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 3 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 3</div>
-            <h2>Actividades por Edades (0-6 Meses)</h2>
-
-            <h3>3.1 El desarrollo en los primeros meses</h3>
-            <p>Durante los primeros seis meses, tu bebé está en una etapa de rápido desarrollo neurológico. Sus principales medios de exploración son los sentidos y el movimiento. Tu rol como padre Montessori en esta etapa es principalmente de observación y preparación del ambiente.</p>
-
-            <h3>3.2 Actividades recomendadas</h3>
-
-            <h4>Móvil de Munari (0-3 meses)</h4>
-            <p>Este móvil estimula la coordinación visomotora. Cuelga objetos en blanco y negro en contraste a 20-30 cm del rostro del bebé. Muévelo lentamente.</p>
-
-            <h4>Móvil de los octógonos (2-4 meses)</h4>
-            <p>Progresión del anterior, con formas más complejas y colores. Introduce gradualmente el color.</p>
-
-            <h4>Espejo (desde el nacimiento)</h4>
-            <p>Los bebés se fascinan con los espejos. Un espejo seguro enmarcado en la cuna o al lado del área de juego permite que el bebé explore su reflejo.</p>
-
-            <h4>Tummy time (desde las primeras semanas)</h4>
-            <p>Coloca al bebé boca abajo sobre una superficie firme por cortos períodos (1-5 minutos varias veces al día). Esto fortalece los músculos del cuello y prepara el gateo.</p>
-
-            <h4>Lectura desde el nacimiento</h4>
-            <p>Nunca es demasiado temprano para leer a tu bebé. Elige libros de cartón con imágenes contrastantes, luego introduce libros con ilustraciones simples.</p>
-
-            <div class="tip-box">
-                <h4>💡 El rol del padre en esta etapa</h4>
-                <p>Tu presencia amorosa es el elemento más importante. Habla a tu bebé, cántale, responde a sus sonidos. No necesitas juguetes elaborados; tu rostro, tu voz y tu contacto son los mejores estímulos.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 4 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 4</div>
-            <h2>Actividades por Edades (6-12 Meses)</h2>
-
-            <h3>4.1 El desarrollo en esta etapa</h3>
-            <p>Entre los 6 y 12 meses, tu bebé experimenta una explosión de desarrollo: gatea, se sienta solo, probablemente empieza a pararse y dar sus primeros pasos. Su curiosidad aumenta exponencialmente. Es la edad de "quiero hacerlo yo".</p>
-
-            <h3>4.2 Actividades recomendadas</h3>
-
-            <h4>Caja de permanencia</h4>
-            <p>Una caja con un agujero donde el niño debe meter objetos. Desarrolla la coordinación mano-ojo y el concepto de permanencia.</p>
-
-            <h4>Puzles de encastre simples</h4>
-            <p>Puzles de madera con una o dos piezas que representan objetos familiares (frutas, animales).</p>
-
-            <h4>Actividades de vertido</h4>
-            <p>Transvasar agua (o arroz, frijoles) entre dos recipientes. Desarrolla la coordinación y la concentración.</p>
-
-            <h4>Montar y desmontar</h4>
-            <p>Cilindros, anillos de colores, materiales que se pueden apilar y derribar.</p>
-
-            <div class="highlight-box">
-                <h4>Cómo presentar una actividad</h4>
-                <ol>
-                    <li><strong>Invita al niño:</strong> "¿Te gustaría hacer una actividad?"</li>
-                    <li><strong>Siéntate a su nivel:</strong> Eye to eye.</li>
-                    <li><strong>Muestra lentamente:</strong> "Yo voy a hacer esto, luego tú."</li>
-                    <li><strong>Permite la repetición:</strong> El niño necesita hacer la actividad muchas veces.</li>
-                    <li><strong>No corrijas:</strong> Si hace "mal", deja que experimente.</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 5 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 5</div>
-            <h2>Actividades por Edades (1-2 Años)</h2>
-
-            <h3>5.1 El desarrollo entre 1 y 2 años</h3>
-            <p>El niño entre 1 y 2 años está en plena exploración del mundo. Camina, corre, habla (o está en proceso), muestra preferencias claras y dice "no" con frecuencia. Esta etapa se llama "los dos años" pero comienza antes. Es la edad del "yo solo".</p>
-
-            <h3>5.2 Actividades recomendadas</h3>
-
-            <h4>Actividades de vida práctica</h4>
-            <ul class="styled-list">
-                <li>Barrer con una escoba child-sized</li>
-                <li>Limpiar derrames con un trapo</li>
-                <li>Regar plantas</li>
-                <li>Alimentar a la mascota</li>
-                <li>Poner y quitar la mesa</li>
-                <li>Lavarse las manos solo</li>
-            </ul>
-
-            <h4>Actividades de coordinación</h4>
-            <ul class="styled-list">
-                <li>Enhebrar cuentas grandes</li>
-                <li>Pinzas para transferir objetos</li>
-                <li>Juegos de apilar</li>
-                <li>Dibujar con crayones grandes</li>
-            </ul>
-
-            <div class="warning-box">
-                <h4>⚠️ El "no" del niño de 1 año</h4>
-                <p>El "no" es un hito de desarrollo. Significa que el niño está desarrollando su voluntad y personalidad. En lugar de tomarlo como desafío personal, ofrece opciones: "¿Quieres la camiseta roja o la azul?"</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 6 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 6</div>
-            <h2>Actividades por Edades (2-3 Años)</h2>
-
-            <h3>6.1 El desarrollo entre 2 y 3 años</h3>
-            <p>El niño de 2-3 años es un explorador incansable. Su lenguaje explota, su imaginación crece y comienza el juego simbólico. También es la edad donde surgen conflictos sociales (compartir, esperar).</p>
-
-            <h3>6.2 Actividades recomendadas</h3>
-
-            <h4>Juego simbólico/imaginativo</h4>
-            <ul class="styled-list">
-                <li>Cocinita</li>
-                <li>Muñecas/muñecos</li>
-                <li>Teléfonos, herramientas de adulto</li>
-            </ul>
-
-            <h4>Actividades de lenguaje</h4>
-            <ul class="styled-list">
-                <li>Dibujar y nombrar</li>
-                <li>Letras de lija (tocar y nombrar letras)</li>
-                <li>Libros con más detalle</li>
-                <li>Narración de historias</li>
-            </ul>
-
-            <h4>Matemáticas tempranas</h4>
-            <ul class="styled-list">
-                <li>Barras numéricas</li>
-                <li>Números de lija</li>
-                <li>Objetos para contar</li>
-            </ul>
-
-            <h4>Ayuda en casa</h4>
-            <ul class="styled-list">
-                <li>Poner la mesa</li>
-                <li>Doblar ropa (de manera simple)</li>
-                <li>Preparar alimentos simples</li>
-                <li>Ordenar sus juguetes</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h4>El momento de transición al orinal</h4>
-                <p>En Montessori, la transición al orinal suele acontecer entre los 18 meses y los 3 años. Los signos de preparación incluyen: control de esfínteres, interés en el orinal, capacidad de seguir instrucciones simples.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 7 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 7</div>
-            <h2>El Papel de los Padres</h2>
-
-            <h3>7.1 Ser un guía, no un jefe</h3>
-            <p>El rol parental en Montessori es sutil pero fundamental. No se trata de dirigir, sino de guiar.</p>
-
-            <h4>Observar antes de actuar</h4>
-            <p>Antes de intervenir en una actividad de tu hijo, observa. ¿Realmente necesita ayuda o está concentrado en resolver?</p>
-
-            <h4>Preparar el ambiente</h4>
-            <p>Tu trabajo principal es tener todo listo para que tu hijo pueda funcionar de forma autónoma. Esto incluye: ropa accesible, espacio limpio y organizado, materiales seguros y disponibles.</p>
-
-            <h4>Retroceder (Step back)</h4>
-            <p>Cuando tu hijo puede hacer algo solo, déjalo. Aunque tardes más, aunque no lo haga "bien". El proceso es más importante que el resultado.</p>
-
-            <h3>7.2 Comunicación efectiva</h3>
-
-            <h4>Habla con respeto</h4>
-            <p>Tu hijo te entiende, aunque no pueda expresarlo. Habla con él como tratarías a cualquier persona: con respeto, claridad y tono calmado.</p>
-
-            <h4>Usa frases positivas</h4>
-            <ul class="styled-list">
-                <li>"Caminamos dentro de casa" en lugar de "No corras"</li>
-                <li>"Las piedras se quedan en el jardín" en lugar de "No tires piedras"</li>
-            </ul>
-
-            <h4>Reconoce emociones</h4>
-            <ul class="styled-list">
-                <li>"Veo que estás enojado porque no quieres irte del parque."</li>
-                <li>"Es difícil esperar, ¿verdad?"</li>
-            </ul>
-
-            <div class="tip-box">
-                <h4>💡 Manejo de rabietas</h4>
-                <p>Las rabietas son normales y esperables. Mantén la calma, no razones en medio de la rabieta, ofrece contención física si es necesario, espera y cuando pase la tormenta, habla.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 8 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 8</div>
-            <h2>Errores Comunes y Cómo Evitarlos</h2>
-
-            <div class="warning-box">
-                <h4>ERROR 1: Querer hacer Montessori "perfecto"</h4>
-                <p><strong>El problema:</strong> Los padres se obsesan con tener el "ambiente perfecto", comprar todos los materiales, convertir la casa en una aula.</p>
-                <p><strong>La solución:</strong> Montessori es una filosofía, no una lista de verificación. Lo importante es la actitud: respetar al niño, observar antes de intervenir, permitir la autonomía.</p>
-            </div>
-
-            <div class="warning-box">
-                <h4>ERROR 2: No permitir la frustración</h4>
-                <p><strong>El problema:</strong> Corremos a ayudar al niño al primer signo de frustración.</p>
-                <p><strong>La solución:</strong> La frustración es parte del aprendizaje. Antes de ayudar, espera. Observa si el niño está realmente en dificultades o si está trabajando en resolver algo.</p>
-            </div>
-
-            <div class="warning-box">
-                <h4>ERROR 3: Inconsistencia</h4>
-                <p><strong>El problema:</strong> Un día sí, otro no.</p>
-                <p><strong>La solución:</strong> Los niños necesitan predictibilidad. Establece rutinas y límites claros y manténlos.</p>
-            </div>
-
-            <div class="warning-box">
-                <h4>ERROR 4: Olvidarse de uno mismo</h4>
-                <p><strong>El problema:</strong> Los padres dan todo al niño y se olvidan de sus propias necesidades.</p>
-                <p><strong>La solución:</strong> Un padre agotado no puede acompañar bien. Cuidarte no es egoísmo; es necesario.</p>
-            </div>
-
-            <div class="warning-box">
-                <h4>ERROR 5: Comparar</h4>
-                <p><strong>El problema:</strong> "El hijo de Lucía ya camina a los 10 meses."</p>
-                <p><strong>La solución:</strong> Cada niño tiene su ritmo. La inteligencia y capacidad no se miden por cuándo camina o habla.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 9 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 9</div>
-            <h2>Aplicar Montessori en Situaciones Cotidianas</h2>
-
-            <h3>9.1 La hora de comer</h3>
-            <ul class="styled-list">
-                <li>Permite que explore la comida con las manos</li>
-                <li>Ofrece alimentos que pueda tomar solo</li>
-                <li>No fuerces la alimentación</li>
-                <li>Haz de la comida un momento tranquilo, sin pantallas</li>
-            </ul>
-
-            <h3>9.2 La hora de dormir</h3>
-            <ul class="styled-list">
-                <li>Establece una rutina predecible (baño, libro, canción, dormir)</li>
-                <li>Crea un ambiente propicio: oscuro, tranquilo, fresco</li>
-                <li>El niño puede tener un objeto de transición</li>
-                <li>Evita pantallas al menos 1 hora antes de dormir</li>
-            </ul>
-
-            <h3>9.3 Salir de casa</h3>
-            <ul class="styled-list">
-                <li>Prepara todo la noche anterior</li>
-                <li>Permite que el niño participe en vestirse</li>
-                <li>Lleva un "bolsí de emergencia" con actividades pequeñas</li>
-                <li>Ten expectativas realistas: salir con un niño pequeño es más lento</li>
-            </ul>
-
-            <h3>9.4 Las compras</h3>
-            <ul class="styled-list">
-                <li>Evita ir cuando el niño está cansado o hambriento</li>
-                <li>Incluye al niño en la experiencia</li>
-                <li>Establece expectativas antes: "Vamos a comprar lo de la lista y nada más."</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 10 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 10</div>
-            <h2>Recursos y Materiales Recomendados</h2>
-
-            <h3>10.1 Libros esenciales para padres</h3>
-            <ul class="styled-list">
-                <li>"El niño es el maestro" por Simone Davies</li>
-                <li>"Montessori desde el nacimiento" por Tim Seldin</li>
-                <li>"El método Montessori en casa" por Catherine McTamaney</li>
-                <li>"El absorbente método" por Maria Montessori</li>
-            </ul>
-
-            <h3>10.2 Materiales por edad</h3>
-
-            <h4>0-6 meses:</h4>
-            <ul class="styled-list">
-                <li>Móvil de Munari</li>
-                <li>Espejo de seguridad</li>
-                <li>Gimnasio de arco</li>
-            </ul>
-
-            <h4>6-12 meses:</h4>
-            <ul class="styled-list">
-                <li>Cajas de permanencia</li>
-                <li>Puzles de encastre</li>
-                <li>Juguetes de madera natural</li>
-                <li>Libros de cartón</li>
-            </ul>
-
-            <h4>1-3 años:</h4>
-            <ul class="styled-list">
-                <li>Materiales de vida práctica</li>
-                <li>Canicas de madera para enhebrar</li>
-                <li>Puzles de knob</li>
-                <li>Lienzos y pinturas de dedos</li>
-                <li>Arena kinética o arroz para jugar</li>
-            </ul>
-
-            <h3>10.3 Recursos online</h3>
-            <ul class="styled-list">
-                <li>@simonedaviesmontessori (Instagram)</li>
-                <li>The Montessori Notebook (web y app)</li>
-                <li>How We Montessori (blog)</li>
-                <li>Kinedu (app con actividades por edad)</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 11 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 11</div>
-            <h2>Preguntas Frecuentes</h2>
-
-            <h4>¿A qué edad debo empezar con Montessori?</h4>
-            <p>Desde el nacimiento. No es nunca demasiado temprano (ni demasiado tarde).</p>
-
-            <h4>¿Necesito comprar materiales caros?</h4>
-            <p>No. El mejor material Montessori es el que ya tienes: objetos reales de la casa, naturaleza, materiales reciclados.</p>
-
-            <h4>¿Puedo aplicar Montessori si trabajo fuera de casa?</h4>
-            <p>Absolutamente. Lo que importa es el tiempo de calidad y la consistencia cuando estás.</p>
-
-            <h4>¿Qué pasa si mi hijo va a una guardería que no es Montessori?</h4>
-            <p>Puedes complementar en casa. Incluso unas horas diarias de ambiente Montessori tienen impacto.</p>
-
-            <h4>¿El método Montessori funciona con niños con necesidades especiales?</h4>
-            <p>Sí. De hecho, Montessori fue originalmente desarrollado para niños con necesidades especiales.</p>
-
-            <h4>¿Cómo manejo la presión de familiares que no entienden Montessori?</h4>
-            <p>Educa con el ejemplo. No critiques a otros padres. Cuando vean los resultados, preguntarán.</p>
-        </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- Chapter 12 -->
-    <div class="page">
-        <div class="chapter">
-            <div class="chapter-number">Capítulo 12</div>
-            <h2>El Viaje Continúa</h2>
-
-            <h3>12.1 Lo que has aprendido</h3>
-            <p>A lo largo de este ebook, has descubierto que:</p>
-            <ul class="styled-list">
-                <li>El método Montessori no es una fórmula rígida, sino una filosofía de respeto y autonomía.</li>
-                <li>El ambiente preparado es fundamental para fomentar la independencia.</li>
-                <li>Las actividades deben adaptarse a cada etapa del desarrollo.</li>
-                <li>Tu rol como padre es de guía, observación y presencia amorosa.</li>
-                <li>Los errores son parte del proceso; lo importante es la intención y la consistencia.</li>
-                <li>Cada niño es único; confiar en tu hijo y en ti mismo es clave.</li>
-            </ul>
-
-            <h3>12.2 Los siguientes pasos</h3>
-            <ol style="margin-left: 20px;">
-                <li style="margin-bottom: 15px;"><strong>Comienza con pequeños cambios:</strong> Elige un área de tu casa y prepárala para la autonomía de tu hijo.</li>
-                <li style="margin-bottom: 15px;"><strong>Observa más, interviene menos:</strong> Dedica 10 minutos al día solo a observar a tu hijo sin dirigir.</li>
-                <li style="margin-bottom: 15px;"><strong>Introduce una actividad nueva:</strong> Elige una actividad de vida práctica adecuada a su edad.</li>
-                <li style="margin-bottom: 15px;"><strong>Conecta con otros:</strong> Únete a comunidades Montessori.</li>
-                <li style="margin-bottom: 15px;"><strong>Sigue aprendiendo:</strong> Este ebook es un comienzo. Profundiza en los recursos mencionados.</li>
-            </ol>
-
-            <div class="final-message">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 28px;">Un mensaje final</h2>
-                <p>Querido padre, madre: estás haciendo un trabajo increíble. Criar a un ser humano es la tarea más difícil y más hermosa del mundo. No necesitas ser perfecto. No necesitas tener todo controlado. Solo necesitas amor, presencia y la disposición de acompañar a tu hijo en su camino de descubrimiento.</p>
-                <p style="margin-top: 20px;">El método Montessori, en su esencia, nos recuerda algo hermoso: los niños vienen con una guía interna. Nuestro trabajo no es moldearlos, sino crear las condiciones para que florezcan. Confía en tu hijo. Confía en ti. Y disfruta el viaje.</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p><strong>Crianza Montessori para Padres Primerizos</strong></p>
-            <p>© 2026 - Ivo Nahuel Jasinskas</p>
-            <p>Todos los derechos reservados</p>
-        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Ivo Nahuel Jasinskas. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px;">
+            <a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a>
+        </p>
+    </footer>
+
+    <!-- Sticky CTA for Mobile -->
+    <div class="sticky-cta">
+        <a href="#precios" class="cta-button">¡Descargar por $7.990!</a>
     </div>
 
 </body>
